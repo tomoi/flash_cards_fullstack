@@ -1,0 +1,28 @@
+$font-stack: 'Roboto', sans-serif;
+$background-gradient: linear-gradient(45deg, #ffadef, #d96dff);
+$font-color: #2b0036;
+$subject-background: #ffadef;
+$icon-color: #6d0037;
+$transition: 100ms;
+$separator-colour: #6d00363e;
+$background-gradient-dark: linear-gradient(
+    45deg,
+    #e6adffaa,
+    #ffadc6aa,
+    #ffadefaa
+);
+
+@mixin defaultButton($min-width, $min-height, $border-size, $scale) {
+    background-image: $background-gradient;
+    border: $border-size solid rgba(0, 0, 0, 0);
+
+    min-height: $min-height;
+    min-width: $min-width;
+    transition-duration: $transition;
+
+    &:hover {
+        transition-duration: $transition;
+        cursor: pointer;
+        border: $border-size solid $icon-color;
+    }
+}

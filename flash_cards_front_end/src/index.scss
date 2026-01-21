@@ -1,0 +1,46 @@
+// <weight>: Use a value from 100 to 900
+
+@use '../src/components/Header/header';
+@use '../src/components/Footer/footer';
+@use '../src/components/HomePage/homePage';
+@use '../src/components/NewCardGroupButton/NewCardGroupButton';
+@use '../src/components/NewSubjectButton/newSubjectButton';
+@use '../src/components/EditSubjectTitle/editSubjectTitle';
+@use '../src/components/NewCardGroupForm/newCardGroupForm';
+@use '../src/components/AddSubjectForm/addSubjectForm';
+@use '../src/components/CardController/cardController';
+@use '../src/components/FlashCardGridView/flashCardGridView';
+@use '../src/components/CardExit/cardExit';
+@use '../src/components/EditFlashCard/editFlashCard';
+@use '../src/components/FlashCardFlip/flashCardFlip';
+@use '../src/components/AddFlashCard/addFlashCard';
+
+@use '../src/variables';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: variables.$font-stack;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+    color: variables.$icon-color;
+}
+
+#root {
+    min-height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: variables.$background-gradient-dark;
+        z-index: -4;
+    }
+}

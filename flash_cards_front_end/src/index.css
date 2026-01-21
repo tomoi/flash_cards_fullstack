@@ -1,0 +1,481 @@
+.header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4px 10px;
+  color: #2b0036;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  gap: 12px;
+  height: 48px;
+}
+.header h2 {
+  font-weight: 900;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.304);
+}
+.header h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+.header::after {
+  content: "";
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  height: 48px;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer {
+  margin: 0 auto;
+  padding: 20px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  grid-template-areas: ". text .";
+  width: 100%;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1160px;
+  grid-area: text;
+}
+.footer::after {
+  content: "";
+  height: 60px;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 12px 16px;
+  background-color: #ffeafa;
+}
+
+.editSubjectTitleButton {
+  border: none;
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  transition-duration: 100ms;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.editSubjectTitleButton:hover {
+  cursor: pointer;
+  transition-duration: 100ms;
+  border: 2px solid #6d0037;
+}
+
+.singleSubject {
+  padding-bottom: 12px;
+  border-bottom: solid 2px rgba(109, 0, 54, 0.2431372549);
+  overflow: auto;
+}
+.singleSubject .subject-title {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 4px;
+  grid-template-areas: "title edit-button" "date date";
+  margin-bottom: 8px;
+}
+.singleSubject .subject-title h2 {
+  grid-area: title;
+  font-size: 32px;
+}
+.singleSubject .subject-title button {
+  grid-area: edit-button;
+}
+.singleSubject .subject-title p {
+  grid-area: date;
+}
+.singleSubject .subjectCardGroups {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 24px;
+  transition-duration: 100ms;
+}
+.singleSubject .singleCardGroup {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  padding: 10px 15px;
+  border: 6px solid rgba(0, 0, 0, 0);
+  border-radius: 14px;
+  min-height: 160px;
+  min-width: 270px;
+  transition-duration: 100ms;
+}
+.singleSubject .singleCardGroup:hover {
+  transform: scale(1.05);
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+.singleSubject .singleCardGroup .date {
+  font-size: 16px;
+}
+.singleSubject .singleCardGroup h3 {
+  font-size: 24px;
+}
+
+.newCardGroupButton {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border-radius: 14px;
+  border: none;
+  width: 42px;
+  min-height: 160px;
+  transition-duration: 100ms;
+  flex: none;
+}
+.newCardGroupButton:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+  transition-duration: 100ms;
+}
+
+.newSubjectButton {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border-radius: 14px;
+  border: none;
+  height: 42px;
+  width: 100%;
+  transition-duration: 100ms;
+}
+.newSubjectButton:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition-duration: 100ms;
+}
+
+.editSubjectTitleForm {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+.editSubjectTitleForm input {
+  font-size: 32px;
+  font-weight: 600;
+}
+.editSubjectTitleForm button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  width: 70px;
+  padding: 8px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transition-duration: 100ms;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.editSubjectTitleForm button:hover {
+  cursor: pointer;
+  transition-duration: 100ms;
+  border: 2px solid #6d0037;
+}
+
+.newCardGroupForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "input input";
+  height: -moz-fit-content;
+  height: fit-content;
+  row-gap: 10px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.newCardGroupForm input {
+  grid-area: input;
+  font-size: 24px;
+  font-weight: 600;
+}
+.newCardGroupForm button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  width: 120px;
+  padding: 8px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transition-duration: 100ms;
+  border: 4px solid rgba(0, 0, 0, 0);
+  padding: 4px;
+  justify-self: center;
+}
+.newCardGroupForm button:hover {
+  cursor: pointer;
+  transition-duration: 100ms;
+  border: 4px solid #6d0037;
+}
+
+.addSubjectForm {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+.addSubjectForm input {
+  font-size: 32px;
+  font-weight: 700;
+}
+.addSubjectForm button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  width: 70px;
+  padding: 8px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transition-duration: 100ms;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.addSubjectForm button:hover {
+  cursor: pointer;
+  transition-duration: 100ms;
+  border: 2px solid #6d0037;
+}
+
+.cardController {
+  background-color: #ffeafa;
+  min-width: 750px;
+  min-height: 400px;
+  padding: 57px 0;
+  position: relative;
+  border-radius: 40px;
+}
+.cardController .returnButton {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border: 2px solid rgba(0, 0, 0, 0);
+  min-height: 30px;
+  min-width: 60px;
+  transition-duration: 100ms;
+  border-radius: 10px;
+  padding: 0 4px;
+}
+.cardController .returnButton:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+  border: 2px solid #6d0037;
+}
+.cardController h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.cardController .cardHeader {
+  text-align: center;
+}
+.cardController .cardButtonGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.cardController .cardButtonGroup button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border: 2px solid rgba(0, 0, 0, 0);
+  min-height: 30px;
+  min-width: 80px;
+  transition-duration: 100ms;
+  border-radius: 10px;
+  padding: 0 4px;
+}
+.cardController .cardButtonGroup button:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+  border: 2px solid #6d0037;
+}
+
+.controllerDefault,
+.controllerEdit,
+.controllerFlip,
+.controllerAdd {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controllerWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 173, 198, 0.5019607843);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.cardGrid {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.cardGrid button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border: 2px solid rgba(0, 0, 0, 0);
+  min-height: 30px;
+  min-width: 30px;
+  transition-duration: 100ms;
+  border-radius: 8px;
+  position: relative;
+}
+.cardGrid button:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+  border: 2px solid #6d0037;
+}
+.cardGrid .active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  bottom: -8px;
+  width: 100%;
+  left: 0;
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border-radius: 2px;
+  animation-name: slideIn;
+  animation-duration: 200ms;
+}
+
+.exitButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  transition-duration: 100ms;
+}
+.exitButton:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+  transition-duration: 100ms;
+}
+
+.cardEditForm form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  align-items: center;
+}
+.cardEditForm form input {
+  font-size: 30px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid rgba(109, 0, 54, 0.2431372549);
+}
+.cardEditForm form button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border: 2px solid rgba(0, 0, 0, 0);
+  min-height: 30px;
+  min-width: 60px;
+  transition-duration: 100ms;
+  font-size: 18px;
+  border-radius: 6px;
+}
+.cardEditForm form button:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+  border: 2px solid #6d0037;
+}
+
+.cardFlip {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.cardFlip h3 {
+  font-size: 40px;
+}
+.cardFlip button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border: 2px solid rgba(0, 0, 0, 0);
+  min-height: 40px;
+  min-width: 80px;
+  transition-duration: 100ms;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.cardFlip button:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+  border: 2px solid #6d0037;
+}
+
+.addCardForm {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 15px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  font-size: 20px;
+}
+.addCardForm button {
+  background-image: linear-gradient(45deg, #ffadef, #d96dff);
+  border: 2px solid rgba(0, 0, 0, 0);
+  min-height: 30px;
+  min-width: 80px;
+  transition-duration: 100ms;
+  border-radius: 10px;
+  font-size: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.addCardForm button:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+  border: 2px solid #6d0037;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: #6d0037;
+}
+
+#root {
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+#root::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(45deg, rgba(230, 173, 255, 0.6666666667), rgba(255, 173, 198, 0.6666666667), rgba(255, 173, 239, 0.6666666667));
+  z-index: -4;
+}/*# sourceMappingURL=index.css.map */
